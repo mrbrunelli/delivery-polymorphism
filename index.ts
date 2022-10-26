@@ -23,9 +23,9 @@ const route = {
 const result = calculateDeliveryTime.calculate(route);
 console.log(result);
 
-const findFatestService = new FindFatestDeliveryService()
+const fastest = new FindFatestDeliveryService()
   .setProvider(rappiService)
   .setProvider(uberEatsService)
-  .setProvider(ifoodService);
-const fastest = findFatestService.find(route);
+  .setProvider(ifoodService)
+  .find(route);
 console.log(fastest);
